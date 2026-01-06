@@ -1,4 +1,4 @@
-import './App.css'
+import Dashboard from "./components/Dashboard";
 
 function App() {
 
@@ -10,6 +10,8 @@ function App() {
            <p className = "text-slate-500 text-sm">Track your financial goals and build your future</p>
         </header>
 
+
+         <Dashboard />
       </div>
      
     </div>
