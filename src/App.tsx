@@ -1,6 +1,13 @@
 import Dashboard from "./components/Dashboard";
+import {useState} from "react";
+import {Goal} from "./types/goal";
+import {useExchangeRate} from "./hooks/useExchangeRate";
+import {loadGoals} from "./utils/storage";
 
-function App() {
+
+export default function App() {
+  const [goals,setGoals] = useState<Goal[]>(loadGoals());
+  const {rate,loading,error, lastUpdated,refresh} = useExchangeRate();
 
   return (
     <div className = "min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to indigo-100">
@@ -11,11 +18,18 @@ function App() {
         </header>
 
 
-         <Dashboard />
+         <Dashboard
+         goals={goals} 
+          rate={rate} 
+          loading={loading}
+          error={error}
+          lastUpdated={lastUpdated}
+          onRefresh={refresh}
+          />
       </div>
      
     </div>
   )
 }
 
-export default App
+
