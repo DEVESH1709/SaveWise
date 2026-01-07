@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {Goal, Currency} from "../types/goal";
+import { X } from "lucide-react";
 
 
 export default function ({
@@ -56,9 +57,9 @@ export default function ({
           <h2 className="text-xl font-bold text-slate-800">Add New Goal</h2>
           <button
             onClick={onClose}
-            className="text-slate-400 hover:text-slate-600 text-2xl"
+            className="text-slate-400 hover:text-slate-600"
           >
-            ×
+            <X className="w-6 h-6" />
           </button>
         </div>
 

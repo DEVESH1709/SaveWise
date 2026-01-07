@@ -1,6 +1,8 @@
 import {Goal} from '../types/goal';
 import {formatMoney} from '../utils/currency';
 import { RefreshCw } from 'lucide-react';
+import { Target,Wallet,Calendar,TrendingUp } from 'lucide-react';
+
 export default function Dashboard({
     goals,
     rate,
@@ -33,8 +35,8 @@ export default function Dashboard({
         <div className = "bg-linear-to-r from-indigo-600 via-indigo-500 to-blue-500 rounded-2xl p-6 mb-8 shadow-xl">
            <div className  ="flex justify-between items-center mb-6">
             <div className = "flex items-center gap-2">
-                <span className = "text-white/80"></span>
-                <span className = "text-white font-medium"> Financial Overview</span>
+               
+                <span className="text-white font-medium flex items-center gap-2"><TrendingUp className="w-5 h-5"/>Financial Overview</span>
 
             </div>
             <button 
@@ -48,8 +50,7 @@ export default function Dashboard({
            <div className = "grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-            <p className="text-white/80 text-sm">Total Targets</p>
+            <p className="text-white/80 text-sm flex items-center gap-1"><Target className="w-4 h-4"/>Total Targets</p>
           </div>
           <p className="text-2xl font-bold text-white">
             {formatMoney(totals.target, "INR")}
@@ -60,8 +61,8 @@ export default function Dashboard({
            </div>
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
-            <p className="text-white/80 text-sm">Total Saved</p>
+            
+            <p className="text-white/80 text-sm flex items-center gap-1"><Wallet className="w-4 h-4"/>Total Saved</p>
           </div>
           <p className="text-2xl font-bold text-white">
             {formatMoney(totals.saved, "INR")}
@@ -73,8 +74,8 @@ export default function Dashboard({
 
          <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="w-2 h-2 bg-yellow-400 rounded-full"></span>
-            <p className="text-white/80 text-sm">Overall Progress</p>
+            
+            <p className="text-white/80 text-sm flex items-center gap-1"><Calendar className="w-4 h-4"/>Overall Progress</p>
           </div>
           <p className="text-2xl font-bold text-white">{progress}%</p>
           <p className="text-white/60 text-sm">Total goals completion</p>

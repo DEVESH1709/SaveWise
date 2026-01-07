@@ -1,4 +1,5 @@
 import {useState} from "react";
+import { X } from "lucide-react";
 
 export default function AddContributionModal ({
     onClose,
@@ -46,9 +47,9 @@ export default function AddContributionModal ({
           <h2 className="text-xl font-bold text-slate-800">Add Contribution</h2>
           <button
             onClick={onClose}
-            className="text-slate-400 hover:text-slate-600 text-2xl"
+            className="text-slate-400 hover:text-slate-600 "
           >
-            *
+            <X className="w-6 h-6" />
           </button>
         </div>
         
