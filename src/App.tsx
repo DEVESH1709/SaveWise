@@ -2,12 +2,17 @@ import Dashboard from "./components/Dashboard";
 import {useState} from "react";
 import {Goal} from "./types/goal";
 import {useExchangeRate} from "./hooks/useExchangeRate";
-import {loadGoals} from "./utils/storage";
+import {loadGoals, saveGoals} from "./utils/storage";
 
 
 export default function App() {
   const [goals,setGoals] = useState<Goal[]>(loadGoals());
   const {rate,loading,error, lastUpdated,refresh} = useExchangeRate();
+
+  const updateGoals  = (g: Goal[])=>{
+    setGoals(g)
+    saveGoals(g);
+  }
 
   return (
     <div className = "min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to indigo-100">
