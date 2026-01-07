@@ -30,7 +30,7 @@ export default function Dashboard({
     const progress = totals.target ? Math.round((totals.saved / totals.target)* 100) :0;
     return (
         <div className = "bg-gradient-to-r form-indigo-600 via-indigo-500 to-blue-500 rounded-2xl p-6 mb-8 shadow-xl">
-           <div className  ="flex justify-between item-center mb-6">
+           <div className  ="flex justify-between items-center mb-6">
             <div className = "flex items-center gap-2">
                 <span className = "text-white/80"></span>
                 <span className = "text-white font-medium"> Financial Overview</span>
@@ -38,7 +38,7 @@ export default function Dashboard({
             </div>
             <button 
             onClick = {onRefresh}
-            className = "bg-white text-indigo-600 px-4 py-2 rounded-lg text-sm font-medium hover-bg-indigo-50 transition-colors flex items-center gap-2"
+            className = "bg-white text-indigo-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-50 transition-colors flex items-center gap-2"
             >
                 Refresh Rates
             </button>

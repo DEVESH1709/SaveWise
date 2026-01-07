@@ -23,7 +23,7 @@ export default function GoalCard({
    
 return (
     <div className = " bg-white p-6 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
-        <div className = "flex justify-between item-start mb-4">
+        <div className = "flex justify-between items-start mb-4">
             <div>
                 <h3 className = "font-semibold text-slate-800 text-lg">{goal.name}</h3>
                 <p className = "text-2xl font-bold text-indigo-600 mt-1">
@@ -35,7 +35,6 @@ return (
             </div>
             <div className = "bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
                 {progress}%
-
             </div>
 
         </div>
