@@ -3,12 +3,13 @@ import {useState} from "react";
 import {Goal} from "./types/goal";
 import {useExchangeRate} from "./hooks/useExchangeRate";
 import {loadGoals, saveGoals} from "./utils/storage";
-
+import GoalCard from "./components/GoalCard";
 
 export default function App() {
   const [goals,setGoals] = useState<Goal[]>(loadGoals());
   const {rate,loading,error, lastUpdated,refresh} = useExchangeRate();
-
+  const [showGoal,setShowGoal] = useState(false);
+ const [activeGoal,setActiveGoal] = useState<Goal | null>(null);
   const updateGoals  = (g: Goal[])=>{
     setGoals(g)
     saveGoals(g);
@@ -31,6 +32,34 @@ export default function App() {
           lastUpdated={lastUpdated}
           onRefresh={refresh}
           />
+
+          <div className = "flex justify-between items-center mb-6">
+            <h2 className ="text-xl font-semibold text-slate-800">Your Goals</h2>
+            
+          <button
+            onClick={() => setShowGoal(true)}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors shadow-md"
+          >
+            <span className="text-lg">+</span> Add Goal
+          </button>
+          </div>
+
+          <div className = "grid grid-cols-1 md:grid-cols-2 gap-6">
+            {goals.map(g=>(
+              <GoalCard
+               key = {g.id}
+               goal = {g}
+               rate = {rate}
+               onAdd = {()=>setActiveGoal(g)}
+              />
+            ))}
+          </div>
+
+          {goals.length ===0 && (
+            <div className = "text-center py-12 text-slate-400">
+              <p> No goals yet. Click "Add Goal" to get started!</p>
+            </div>
+          )}
       </div>
      
     </div>
