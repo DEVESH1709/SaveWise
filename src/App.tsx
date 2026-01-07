@@ -64,6 +64,8 @@ export default function App() {
 
           {showGoal && (
             <AddGoalModal
+            onClose ={()=>setShowGoal(false)}
+            onSave = {g =>updateGoals([...goals,g])}
             />
           )}
       </div>
