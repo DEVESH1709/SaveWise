@@ -72,7 +72,18 @@ export default function App() {
 
           {activeGoal && (
             <AddContributionModal
-            
+             onClose = {()=>setActiveGoal(null)}
+             onSave={(amount,date)=>
+              updateGoals(
+                goals.map(g=>
+                  g.id ===activeGoal.id
+                  ?{...g,
+                    contributions:[...g.contributions,{amount,date}]
+                  }
+                  :g
+                )
+              )
+             }
             />
           )}
       </div>
