@@ -1,5 +1,6 @@
 import {Goal} from '../types/goal';
 import {formatMoney} from '../utils/currency';
+import { RefreshCw } from 'lucide-react';
 export default function Dashboard({
     goals,
     rate,
@@ -40,7 +41,7 @@ export default function Dashboard({
             onClick = {onRefresh}
             className = "bg-white text-indigo-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-50 transition-colors flex items-center gap-2"
             >
-                Refresh Rates
+               <RefreshCw className="w-5 h-5" /> Refresh Rates
             </button>
            </div>
 
