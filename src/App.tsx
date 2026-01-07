@@ -5,6 +5,7 @@ import {useExchangeRate} from "./hooks/useExchangeRate";
 import {loadGoals, saveGoals} from "./utils/storage";
 import GoalCard from "./components/GoalCard";
 import AddGoalModal from "./components/AddGoalModal";
+import AddContributionModal from "./components/AddContributionModal";
 
 export default function App() {
   const [goals,setGoals] = useState<Goal[]>(loadGoals());
@@ -66,6 +67,12 @@ export default function App() {
             <AddGoalModal
             onClose ={()=>setShowGoal(false)}
             onSave = {g =>updateGoals([...goals,g])}
+            />
+          )}
+
+          {activeGoal && (
+            <AddContributionModal
+            
             />
           )}
       </div>
