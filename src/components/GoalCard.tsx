@@ -40,7 +40,34 @@ return (
 
         </div>
 
-        
+        <div className = "mb-4">
+            <div className = "flex justify-between text-sm text-slate-500 mb-2">
+                <span>Progress</span>
+                <span className = "text-slate-700 font-medium">{formatMoney(saved, goal.currency)}</span>
+            </div>
+            <div className ="h-2 bg-slate-100 rounded-full overflow-hidden" >
+                <div 
+                 className = "h-full bg-gradient-to-r from-indigo-500 rounded-full transition-all duration-500"
+                  style={{ width: `${progress}%` }}
+                />
+
+                </div>
+
+            </div>
+
+
+            <div className="flex justify-between text-sm text-slate-500 mb-4 pb-4 border-b border-slate-100">
+        <span>{goal.contributions.length} contribution{goal.contributions.length !== 1 ? 's' : ''}</span>
+        <span>{formatMoney(Math.max(0, remaining), goal.currency)} remaining</span>
+      </div>
+       
+
+         <button
+        onClick={onAdd}
+        className="w-full py-3 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 hover:border-indigo-400 hover:text-indigo-600 transition-colors flex items-center justify-center gap-2"
+      >
+        <span className="text-lg">+</span> Add Contribution
+      </button>
     </div>
 )
 }
