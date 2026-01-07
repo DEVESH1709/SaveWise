@@ -4,6 +4,7 @@ import {Goal} from "./types/goal";
 import {useExchangeRate} from "./hooks/useExchangeRate";
 import {loadGoals, saveGoals} from "./utils/storage";
 import GoalCard from "./components/GoalCard";
+import AddGoalModal from "./components/AddGoalModal";
 
 export default function App() {
   const [goals,setGoals] = useState<Goal[]>(loadGoals());
@@ -59,6 +60,11 @@ export default function App() {
             <div className = "text-center py-12 text-slate-400">
               <p> No goals yet. Click "Add Goal" to get started!</p>
             </div>
+          )}
+
+          {showGoal && (
+            <AddGoalModal
+            />
           )}
       </div>
      
