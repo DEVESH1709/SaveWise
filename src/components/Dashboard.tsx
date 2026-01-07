@@ -29,7 +29,7 @@ export default function Dashboard({
 
     const progress = totals.target ? Math.round((totals.saved / totals.target)* 100) :0;
     return (
-        <div className = "bg-gradient-to-r form-indigo-600 via-indigo-500 to-blue-500 rounded-2xl p-6 mb-8 shadow-xl">
+        <div className = "bg-linear-to-r from-indigo-600 via-indigo-500 to-blue-500 rounded-2xl p-6 mb-8 shadow-xl">
            <div className  ="flex justify-between items-center mb-6">
             <div className = "flex items-center gap-2">
                 <span className = "text-white/80"></span>
@@ -57,7 +57,7 @@ export default function Dashboard({
             ${totals.targetUSD.toLocaleString('en-US', { maximumFractionDigits: 0 })}
           </p>
            </div>
-
+        <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
             <p className="text-white/80 text-sm">Total Saved</p>
@@ -78,6 +78,7 @@ export default function Dashboard({
           <p className="text-2xl font-bold text-white">{progress}%</p>
           <p className="text-white/60 text-sm">Total goals completion</p>
         </div>
+            </div>
 <div className="flex justify-between items-center pt-4 border-t border-white/20">
         <div className="text-white/60 text-sm">
           {loading && "Loading exchange rate..."}
@@ -91,5 +92,6 @@ export default function Dashboard({
         </div>
       </div>
         </div>
+
     );
 }
