@@ -39,9 +39,9 @@ export default function Dashboard({
             </div>
             <button 
             onClick = {onRefresh}
-            className = "bg-white text-indigo-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-50 transition-colors flex items-center gap-2"
+            className = "bg-white cursor-pointer text-indigo-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-50 transition-colors flex items-center gap-2"
             >
-               <RefreshCw className="w-5 h-5" /> Refresh Rates
+               <RefreshCw className="w-3 h-3" /> Refresh Rates
             </button>
            </div>
 
