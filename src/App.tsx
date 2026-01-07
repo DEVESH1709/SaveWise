@@ -6,6 +6,7 @@ import {loadGoals, saveGoals} from "./utils/storage";
 import GoalCard from "./components/GoalCard";
 import AddGoalModal from "./components/AddGoalModal";
 import AddContributionModal from "./components/AddContributionModal";
+import {Target} from 'lucide-react';
 
 export default function App() {
   const [goals,setGoals] = useState<Goal[]>(loadGoals());
@@ -18,10 +19,10 @@ export default function App() {
   }
 
   return (
-    <div className = "min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
+    <div className = "min-h-screen bg-linear-to-br from-slate-100 via-blue-50 to-indigo-100">
       <div className ="max-w-5xl mx-auto p-6">
-        <header className = "flex items-center justify-center gap-2 mb-2">
-          <h1 className = "text-2xl font-bold text-slate-800">Syfe Saving Planner</h1>
+        <header className = "flex flex-col items-center justify-center gap-2 mb-8">
+          <h1 className = "text-3xl font-bold text-slate-800 flex items-center gap-2"><Target className="w-6 h-6 text-indigo-700"/>Syfe Saving Planner</h1>
            <p className = "text-slate-500 text-sm">Track your financial goals and build your future</p>
         </header>
 
@@ -40,7 +41,7 @@ export default function App() {
             
           <button
             onClick={() => setShowGoal(true)}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors shadow-md"
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors shadow-md cursor-pointer"
           >
             <span className="text-lg">+</span> Add Goal
           </button>

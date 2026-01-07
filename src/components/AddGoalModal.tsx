@@ -57,7 +57,7 @@ export default function ({
           <h2 className="text-xl font-bold text-slate-800">Add New Goal</h2>
           <button
             onClick={onClose}
-            className="text-slate-400 hover:text-slate-600"
+            className="text-slate-400 cursor-pointer hover:text-slate-600"
           >
             <X className="w-6 h-6" />
           </button>
@@ -120,13 +120,13 @@ export default function ({
         <div className="flex gap-3 mt-6">
           <button
             onClick={onClose}
-            className="flex-1 py-3 border border-slate-200 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors"
+            className="flex-1 py-3 border cursor-pointer border-slate-200 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors"
           >
             Cancel
           </button>
           <button
             onClick={submit}
-            className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-medium transition-colors"
+            className="flex-1 bg-indigo-600 cursor-pointer hover:bg-indigo-700 text-white py-3 rounded-lg font-medium transition-colors"
           >
             Create Goal
           </button>

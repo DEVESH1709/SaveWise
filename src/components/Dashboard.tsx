@@ -30,7 +30,11 @@ export default function Dashboard({
         {saved:0,target:0,savedUSD:0,targetUSD:0}
     )
 
-    const progress = totals.target ? Math.round((totals.saved / totals.target)* 100) :0;
+    const progress = totals.target ? (totals.saved / totals.target) * 100 : 0;
+    const progressDisplay = progress < 1 && progress > 0 
+        ? progress.toFixed(2) 
+        : Math.round(progress);
+    
     return (
         <div className = "bg-linear-to-r from-indigo-600 via-indigo-500 to-blue-500 rounded-2xl p-6 mb-8 shadow-xl">
            <div className  ="flex justify-between items-center mb-6">
@@ -50,7 +54,7 @@ export default function Dashboard({
            <div className = "grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div>
           <div className="flex items-center gap-2 mb-1">
-            <p className="text-white/80 text-sm flex items-center gap-1"><Target className="w-4 h-4"/>Total Targets</p>
+            <p className="text-white/80 text-sm flex items-center gap-1"><Target className="w-4 h-4"/> Total Targets</p>
           </div>
           <p className="text-2xl font-bold text-white">
             {formatMoney(totals.target, "INR")}
@@ -77,7 +81,7 @@ export default function Dashboard({
             
             <p className="text-white/80 text-sm flex items-center gap-1"><Calendar className="w-4 h-4"/>Overall Progress</p>
           </div>
-          <p className="text-2xl font-bold text-white">{progress}%</p>
+          <p className="text-2xl font-bold text-white">{progressDisplay}%</p>
           <p className="text-white/60 text-sm">Total goals completion</p>
         </div>
             </div>
